@@ -1,128 +1,98 @@
-% resume.tex
+%% start of file `template.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
 %
-% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
-% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
-% (c) 2007-2010 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
-%
-% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
-
-\documentclass[letterpaper,10pt]{article}
-
-%-----------------------------------------------------------
-\usepackage[empty]{fullpage}
-\usepackage{color}
-\usepackage{hyperref}
-\definecolor{mygrey}{gray}{0.80}
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Adjust margins to 0.5in on all sides
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.5in}
-\addtolength{\textheight}{1.0in}
-
-%-----------------------------------------------------------
-%Custom commands
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
-\newcommand{\ressubheading}[4]{
-\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
-		\textbf{#1} & #2 \\
-		\textit{#3} & \textit{#4} \\
-\end{tabular*}\vspace{-6pt}}
-%-----------------------------------------------------------
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
 
+\documentclass[10pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\usepackage{moderntimeline}
+
+% moderncv themes
+\moderncvstyle{casual}                        % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{orange}                          % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                         % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}      % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\firstname{Luis Felipe}
+\familyname{Borjas}
+\title{Full web-stack engineer, itinerant educator}
+\mobile{+1~(646)~243~4692}                     % optional, remove the line if not wanted
+\email{luisfborjas@gmail.com}                          % optional, remove the line if not wanted
+\homepage{lfborjas.com}                    % optional, remove the line if not wanted
+%\photo[64pt][0.4pt]{picture}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{Some quote (optional)}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
 
-\begin{tabular*}{7.5in}{l@{\extracolsep{\fill}}r}
-\textbf{\large Luis Felipe Borjas}  & +1 646 243 4692 (mobile)\\
-&  luisfborjas@gmail.com\\
-& http://lfborjas.com\\
-\end{tabular*}
-\\
-
-\vspace{0.1in}
-
-\resheading{Education}
+\section{Work Experience}
+\tlmaxdates{2009}{2018}
+\tltext{\tiny}
+\tllabelcventry[orange]{2011}{0}{Sept 2011-- Now}{Consultant/Co-founder}{Escolarea LLC}{}{}{
 \begin{itemize}
-\item
-	\ressubheading{Central American Technological University (UNITEC)}{Tegucigalpa, Honduras}{Bachelor of Science in Computer Systems Engineering}{January 2006 - September 2010}
-	\begin{itemize}
-        \resitem Graduated Cum Laude (86\%)
-		\resitem Undergraduate Dissertation: \emph{Web Service for Just-in-time information recommendations based on ontological user profiles}. Used the Open Directory Project to create a web service (REST API) which would allow third parties to embed a javascript snippet which would in turn analyze a text field, find key terms and recommend resources in real time; building an ontological profile for each user -to identify her areas of interest and improve further recommendations. 
-	\end{itemize}
-\end{itemize}
+  \item General solutions for fellow entrepreneurs: backbone based single-page apps, ruby on rails (RoR) applications/mobile APIs, server and database provisioning and administration (debian-based servers, MySQL databases and MongoDB datastores), use of AWS services
+  \item Clients to date: \url{http://monaeo.com}, \url{http://www.phillyinfocus.com}, \url{http://playpinstar.com}  
+\end{itemize}}
 
-\resheading{Teaching Experience}
+\tllabelcventry[orange]{2011}{0}{June 2011--Dec 2011}{Co-founder}{Pictour.us, Inc}{New York, NY, US}{}{
 \begin{itemize}
-\item
-	\ressubheading{General Assembly}{New York, NY}{Lecturer}{Summer 2012}
-	\begin{itemize}
-    \resitem{
-      Lectured on data structures and algorithms, theory of computation and theory of programming languages.
-      more information about the curriculum can be found at \url{http://cs4h.com}
-    }
-	\end{itemize}
-\end{itemize}
+  \item{Engineered the RoR backend for the geolocation aware photo-sharing mobile API for the iPhone and android apps; using amazon S3 for storage. Deploying to rackspace cloud, PostgreSQL db}
+\end{itemize}}
 
+\tllabelcventry[orange]{2009}{2011}{May 2009--June 2011}{Co-founder}{Class.io}{Tegucigalpa, Honduras}{}{
 \begin{itemize}
-\item
-	\ressubheading{UNITEC - Laureate International Universities}{Tegucigalpa, Honduras}{Lecturer}{October 2010 - May 2012}
-	\begin{itemize}
-    \resitem{
-      Organized object oriented programming laboratories. Taught java as introductory language.
-      Built and imparted web development courses with python, ruby and javascript.
-    }
-	\end{itemize}
-\end{itemize}
+  \item{Built the web application on python/django, with mysql/postgres databases, using rabbitMQ for background jobs and integrating with google single sign on and apps APIs, the app participated in Google I/O 2001 and is on the education marketplace}
+\end{itemize}}
 
-\resheading{Work Experience}
+\section{Skills}
+\cvitem{Programming languages}{Ruby, python, javascript (client-side and node.js, coffescript), python, C++}
+\cvdoubleitem{SCM/Project management}{Git, pivotal tracker}{Server admin}{Debian-based system}
+\cvdoubleitem{Databases}{MySQL, PostgreSQL, mongoDB}{Academic interests}{Theory of computation and programming languages, specially functional programming with Scheme and Haskell}
+
+\section{Teaching Experience}
+\cventry{Summer 2012}{Lecturer}{General Assembly}{New York, NY, US}{}{
 \begin{itemize}
-\item
-	\ressubheading{Escolarea, LLC}{Miramar, FL, USA}{Full-stack engineering consultant}{September 2011 - Present}
-	\begin{itemize}
-		\resitem{Full stack solutions for fellow entrepreneurs as a web development consultant (have worked, to date, with \url{http://monaeo.com}, \url{http://www.phillyinfocus.com/} and \url{http://www.digitallyactive.com/}}
-    \resitem{Skills acquired: medium/big data handling, AWS provisioning with RDS, EC2, S3, ElasticMapReduce, test-driven development, mongodb, server-side processing with background and cron jobs, distributed deployment, backbone/single-page apps}
-	\end{itemize}
-\item
-	\ressubheading{Pictour.us, Inc}{New York City, NY, USA}{Co-founder and Full-stack engineer}{June 2011 - December 2011}
-	\begin{itemize}
-		\resitem{Full-stack engineer: ruby on rails app/API, javascript frontend, heavy test coverage for javascript and ruby, postgreSQL database management}
-	\end{itemize}
-\item
-	\ressubheading{Class.io}{Tegucigalpa, Honduras}{Co-founder and Web Developer}{May 2009 - June 2011}
-	\begin{itemize}
-		\resitem{Full-stack engineer: python/django web app, API integration, VPS deployment and mysql database management, rabbitMQ background processing, jquery front-end, css/html style and structure}
-	\end{itemize}
+  \item{Co-lectured the "cs for hackers" course, covered data structures and algorithms, theory of computation and theory of programming languages; more info at \url{http://cs4h.com}}
 \end{itemize}
+}
 
-\pagebreak
-
-
-\resheading{Summary of skills}
+\cventry{Oct 2010--May 2012}{Lecturer}{UNITEC}{Tegucigalpa, Honduras}{}{
 \begin{itemize}
-  \item{
-    Programming in ruby, 
-    javascript (client and server, with node.js, also, coffeescript),
-    python,
-     used C++ and java during college;
-  }
-  \item{Source code management with git and code-review, collaboration practices using github.com}
-  \item{Database management in MySQL, PostgreSQL and MongoDB}
-  \item{Proficiency in UNIX-based server management}
-  \item{Academic interest in theory of computation and programming language technology, specially functional languages like Scheme and Haskell}
+  \item{Taught programming in java and web development in python and ruby}
 \end{itemize}
+}
 
-\resheading{Miscellanea}
-\begin{description}
-\item[Open-source projects and contributions:]
- \url{https://github.com/lfborjas} and \url{https://github.com/escolarea-labs}
-\item[Linked-in profile:]
- \url{http://www.linkedin.com/in/lfborjas}
-\end{description}
+\section{Education}
+\cventry{Jan 2006-- Sept 2010}{Bachelor of science in computer systems engineering}{Central American Technological University (UNITEC)}{Tegucigalpa, Honduras}{}{
+\begin{itemize}
+  \item{Graduated cum laude}
+  \item{Dissertation: web service for just-in-time recommendations based on ontological user profiles}
+\end{itemize}
+}
 
 \end{document}
